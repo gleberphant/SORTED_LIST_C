@@ -41,6 +41,13 @@ Execute o arquivo main.exe pelo terminal informando numeros inteiros separados p
 ```
 main.exe <itens>
 ```
+ou, para testar com valores default,
+
+
+```
+make run
+```
+
 
 <br>
 
