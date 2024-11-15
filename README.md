@@ -4,14 +4,15 @@
 
 <br>
 
-![C BADGE](https://img.shields.io/badge/c-blue?logo=c)
-
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/gleberphant)
-![GitHub last commit](https://img.shields.io/github/last-commit/gleberphant/DRAW_PIXELS_SDL)
-![GitHub branch status](https://img.shields.io/github/checks-status/gleberphant/DRAW_PIXELS_SDL/master)
+![GitHub last commit](https://img.shields.io/github/last-commit/gleberphant/SORTED_LIST_C)
+![GitHub branch status](https://img.shields.io/github/checks-status/gleberphant/SORTED_LIST_C/master)
+![GitHub License](https://img.shields.io/github/license/gleberphant/SORTED_LIST_C)
+
 ![LibrePay](https://img.shields.io/liberapay/receives/gleberphant.svg?logo=liberapay)
 
-![GitHub License](https://img.shields.io/github/license/gleberphant/DRAW_PIXELS_SDL)
+
+
 
 Desenvolvido por<a href=biolivre.com.br/handersongleber> Handerson Gleber( gr4v4t1nh4) </a>
 
@@ -29,50 +30,42 @@ Gostou do projeto? Por favor considere fazer uma doação para ajudar a melhorá
 
 ## 🐙 Descrição
 
-"PAINT LIKE"
-Aplicação para desenhar na tela feita em C utilizando a biblioteca  `SDL3` em 2024. 
+Aplicação que cria uma linked list organizada de modo crescente
 
+<br>
 
+## ➡️ Como utilizar
 
-#### ▶️Comandos
+Execute o arquivo main.exe pelo terminal informando numeros inteiros separados por espaço como argumento
 
 ```
-click com o botão esquerdo do mouse para desenhar
+main.exe <itens>
 ```
 
 <br>
 
 ## 💻 Pré-requisitos
 
-- Biblioteca `SDL3-3.1.6`
-- Biblioteca `SDL_ttf 3.0` 
-- Biblioteca `SDL_image 3.0`  
-
-
+- Biblioteca `GCC mingw32`
 
 <br>
 
 ## 🚀 Clone do repositário
 
 ```
-git clone https://github.com/gleberphant/DRAW_PIXELS_SDL.git
+git clone https://github.com/gleberphant/SORTED_LIST_C.git
 ```
 
 <br>
 
-##  💾 Compilação do projeto
+##  💾 Compilação e Execução do projeto
 
 ```
-gcc -o main main.c -lSDL3 -lSDL3_image -lSDL3_ttf -I/SDL3/includes -L/SDL3/libs
+gcc -o main main.c
 ```
 
-<br>
-
-##   Execução do projeto
-
-
 ```
-execute o aplicativo 'main.exe'
+.\main.exe <itens>
 ```
 
 
@@ -92,8 +85,6 @@ https://www.instagram.com/handersongleber/
 ## 📝 Licença
 
 Esse projeto está sob licença livre. 
-
-Disponibilizo como código aberto quase tudo o que posso e tento responder a todos que precisam de ajuda para utilizar esses projetos. Claro, isso demanda tempo. 
 
 <br>
 
