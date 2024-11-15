@@ -1,5 +1,7 @@
-#include "nodes.c"
+#include <stdio.h>
+#include <stdlib.h>
 
+#include "nodes.h"
 
 int main(int argc, char *argv[])
 {

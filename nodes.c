@@ -1,14 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
-typedef struct NODE NODE;
 
-struct NODE
-{
-    int number;
-    NODE *next;
-};
+#include "nodes.h"
 
 
 /* Função que libera a memoria alocada dinamicamente
