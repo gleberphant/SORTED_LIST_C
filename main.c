@@ -11,48 +11,59 @@ struct NODE
 };
 
 
+/* Função que libera a memoria alocada dinamicamente
+  * 
+ */
 void freeNode(NODE* node){
-    //ultimo node
-    if(node != NULL){
-        freeNode(node->next);
-    } else{
-        return;
-    }
-    printf("%p ", node);
+    
+    // quando for o ultimo no retorna sem fazer nada   
+    if(node == NULL) return;
+
+    // chama o proximo n
+    freeNode(node->next);
+    
+    // quando retornar da função que liberou o proximo libera o nó
+    printf("*%d ", node->number);
     free(node);
 }
 
+/* Função que imprime uma lista
+ * 
+ */
 void printList(NODE* listHead){
     
     printf("\n Lista Organizada: "  );
 
     for(NODE* current = listHead; current != NULL; current = current->next){
-        
         printf(" < %d", current->number);
-    
-
     }
     
 }
 
+/* Função que percorre a lista e insere o novo nó na posição correta
+ * recebe um ponteiro para o listHead e o novo Nó
+ * 
+ */
 void insertNode(NODE** listHead, NODE* newNode ){
-    
-
-
+   
     NODE **current;   
-    // LISTA CONTEM MAIS DE UM ITEM
-    // PERCORRE A LISTA PARA ENCONTRAR A POSIÇÃO
-    for(current = listHead ; *current != NULL ; current = &((*current)->next) ){
-        
-        if( newNode->number < (* current)->number ){
+
+    // PERCORRE A LISTA PARA ENCONTRAR A POSIÇÃO CORRETA
+    for(current = listHead ; *current != NULL ; current = &(*current)->next ){
+        // quando o novo nó for menor que o nó  atual,  quebra o laço
+        if( newNode->number < (*current)->number ){
             break;
-        }
-       
+        }       
+        // se o novo nó for maior que o nó atual então avança a lista
     }
-        
-        newNode->next = *current;
-        *current = newNode;
-        return;
+    // define que nó seguinte do novo nó é o da posição atual
+    newNode->next = *current;
+
+    // define que a posição atual agora passa a ser o novo nó
+    *current = newNode;
+
+    // finaliza a função
+    return;
 }
 
 
@@ -61,18 +72,12 @@ int main(int argc, char *argv[])
 
     NODE* listHead = NULL;
     NODE* newNode = NULL;
-    int number;
-    
-
+        
     printf("\n Lista original : ");
 
-    // FOR DOS ARGUMENTOS
+    // PARA cada numero passado como argumento cria um novo nó e insere na lista
     for (int i = 1; i < argc ; i++)
     {
-        number = atoi(argv[i]);
-
-        printf(" %d :", number);
-        
         newNode = malloc(sizeof(NODE));
 
         if(newNode == NULL){
@@ -80,21 +85,18 @@ int main(int argc, char *argv[])
             return 1;
         }
         
-        newNode->number = number;
+        newNode->number = atoi(argv[i]);
         newNode->next = NULL;
-
+        
+        printf(" %d :", newNode->number);
         
         insertNode(&listHead,  newNode );
-
-        //free(newNode);
-
                              
     }
    
     printf("\n ---------------------------------");
    
     printList(listHead);
-
 
     printf("\n ---------------------------------");
     printf("\n Liberando memoria:  ");
