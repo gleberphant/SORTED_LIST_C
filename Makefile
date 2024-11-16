@@ -24,4 +24,4 @@ clean:
 
 # Regra para executar o programa
 run: all
-	./$(EXECUTAVEL) 11 5 50 10 88 74 83 6 71 9 2 33 22 12 11 58 58 8 23 23 84 
+	./$(EXECUTAVEL) 11 5 50 10 88 74 83 6 71 9 2 33 22 12 11 58 58 8 23 84 

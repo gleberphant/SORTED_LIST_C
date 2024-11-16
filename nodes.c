@@ -40,22 +40,31 @@ void printList(NODE* listHead){
  */
 void insertNode(NODE** listHead, NODE* newNode ){
    
-    NODE **current;   
+    NODE **current = NULL, **previous = NULL;
 
     // PERCORRE A LISTA PARA ENCONTRAR A POSIÇÃO CORRETA
-    for(current = listHead ; *current != NULL ; current = &(*current)->next ){
+    for(current = listHead ; (*current) != NULL ; current = &(*current)->next ){
         // quando o novo nó for menor que o nó  atual,  quebra o laço
         if( newNode->number < (*current)->number ){
             break;
         }       
         // se o novo nó for maior que o nó atual então avança a lista
+        previous = current;
     }
-    // define que nó seguinte do novo nó é o da posição atual
-    newNode->next = *current;
-
-    // define que a posição atual agora passa a ser o novo nó
-    *current = newNode;
-
+    
+    // Se previous for null então insere na cabeça senão insere no meio do corpo 
+    if(previous == NULL){
+        newNode->next = *listHead; 
+        *listHead = newNode;
+    } 
+    else{
+        newNode->next = *current;
+        (*previous)->next = newNode;
+        
+    }
+    
+    
+    
     // finaliza a função
     return;
 }
